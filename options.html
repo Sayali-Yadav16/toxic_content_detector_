@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toxicity Filter Options</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        background-color: #f4f4f9;
+      }
+      h1 {
+        color: #333;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #status {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toxic Word List Management</h1>
+    <p>
+      Enter one toxic word or phrase per line. These words will be used to
+      filter both text and image context.
+    </p>
+
+    <textarea id="toxicWordsInput"></textarea>
+
+    <button id="saveButton">Save Word List</button>
+
+  <h2 style="margin-top:20px">AI / Integration</h2>
+  <p>Optional: provide an OpenAI API key to enable higher-quality rephrasing suggestions in the popup.</p>
+  <input id="openaiKeyInput" type="password" placeholder="sk-..." style="width:100%;padding:8px;margin-bottom:8px;box-sizing:border-box">
+  <button id="saveKeyButton">Save API Key</button>
+  <div id="keyStatus" style="margin-top:8px;color:#333"></div>
+  <h3 style="margin-top:16px">Proxy endpoint (optional)</h3>
+  <p>If you host a server proxy, provide its base URL (eg. https://myserver.example) so the extension can use it instead of calling OpenAI directly.</p>
+  <input id="proxyUrlInput" type="text" placeholder="https://myserver.example" style="width:100%;padding:8px;margin-bottom:8px;box-sizing:border-box">
+  <button id="saveProxyButton">Save Proxy URL</button>
+  <div id="proxyStatus" style="margin-top:8px;color:#333"></div>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

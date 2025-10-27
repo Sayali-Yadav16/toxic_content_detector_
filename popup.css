@@ -1,0 +1,185 @@
+
+:root {
+  --accent: #2c7be5;
+  --bg: #f7fbff;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 8px 24px rgba(16,24,40,0.08);
+}
+
+/* Main popup container */
+.popup-box {
+  width: 320px;
+  padding: 14px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, var(--card), #fbfdff);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,24,40,0.04);
+}
+
+body {
+  margin: 12px;
+  background: transparent;
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.header { display:flex; align-items:center; gap:12px; }
+.header img { width:44px; height:44px; border-radius:8px; padding:4px; background:var(--glass); border:1px solid rgba(0,0,0,0.04) }
+.header h1 { margin:0; font-size:16px }
+.header p { margin:0; color:var(--muted); font-size:12px }
+
+.section { margin-top:12px }
+
+/* Toggle */
+.toggle-row { display:flex; align-items:center; gap:10px }
+.switch { position:relative; display:inline-block; width:48px; height:26px }
+.switch input { display:none }
+.slider { position:absolute; inset:0; background:#eaf3ff; border-radius:999px; transition: all .18s }
+.slider:before { content:""; position:absolute; left:4px; top:4px; width:18px; height:18px; background:#fff; border-radius:50%; box-shadow:0 3px 8px rgba(16,24,40,0.12); transition: all .18s }
+.switch input:checked + .slider { background: var(--accent) }
+.switch input:checked + .slider:before { transform: translateX(22px) }
+.switch-label { margin-left:8px; font-weight:600 }
+
+/* Range */
+input[type=range] { width:100%; margin-top:8px }
+
+/* Categories */
+.categories { margin-top:8px; display:flex; flex-direction:column; gap:8px }
+.categories .item { display:flex; align-items:center; gap:10px }
+.categories input[type="checkbox"] { width:18px; height:18px; appearance:none; -webkit-appearance:none; border-radius:6px; border:1px solid #e6eef9; background:#fff }
+.categories input[type="checkbox"]:checked { background:var(--accent); border-color:var(--accent) }
+.categories input[type="checkbox"]:checked::after { content:""; position:absolute; left:6px; top:5px; width:6px; height:10px; border:2px solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg) }
+.categories label { color:var(--muted); font-size:13px }
+
+textarea { width:100%; box-sizing:border-box; padding:8px; border-radius:8px; border:1px solid #e7eef9; background:#fbfeff; resize:vertical }
+
+.footer { margin-top:12px; text-align:right }
+button { background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600 }
+
+.activity { font-size:13px; color:#333; margin-top:8px }
+.card { margin-top:8px; border-radius:8px; padding:8px; background:linear-gradient(180deg,#fff,#fcfeff); border:1px solid #f1f7fb }
+canvas { width:100%; height:80px; display:block; border-radius:6px }
+
+.row { display:flex; align-items:center; justify-content:space-between }
+.muted { color:var(--muted); font-size:12px }
+
+@media (max-width:360px) { .popup-box { width:300px } }
+
+
+
+  .popup-box{width:300px}
+
+:root {
+  --accent:#2c7be5;
+  --bg: #fbfdff;
+  --muted: #6b7280;
+    --bg: #f7fbff;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --glass: rgba(255,255,255,0.6);
+    --shadow: 0 8px 24px rgba(16,24,40,0.08);
+  background:var(--bg);
+
+/* --- Additional refined UI styles (do not remove existing content) --- */
+/* Card background and overall gradient similar to the attachment */
+.popup-card-hero {
+  background: linear-gradient(180deg, #f3f7fb 0%, #ffffff 65%);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(16,24,40,0.10);
+  border: 1px solid rgba(16,24,40,0.04);
+}
+
+/* Header icon + title spacing tweak */
+.header .title-meta { display:flex; flex-direction:column }
+.header h1 { font-size:18px; color:#0f1724 }
+.header p { color:var(--muted); font-size:12px }
+
+/* Protection toggle row with label on the left and switch on the right */
+.protection-row { display:flex; align-items:center; justify-content:space-between; gap:12px }
+.protection-row .label { font-weight:600; color:#0f1724 }
+
+/* Make switch look like the mockup: pill with shadow and an 'On' badge to the right */
+.switch { width:56px; height:30px }
+.switch .slider { border-radius:999px }
+.switch .slider:before { width:22px; height:22px; top:4px; left:4px }
+.switch input:checked + .slider:before { transform:translateX(26px) }
+.switch-on-badge { display:inline-block; margin-left:10px; font-size:12px; color:var(--muted); background:rgba(44,123,229,0.08); padding:4px 8px; border-radius:999px }
+
+/* Blur control row: label + numeric value + slider */
+.blur-row { display:flex; flex-direction:column; gap:8px }
+.blur-row .meta { display:flex; align-items:center; justify-content:space-between }
+.blur-value { font-weight:600; color:#0f1724 }
+.range-wrap { position:relative; display:flex; align-items:center; gap:10px }
+input[type=range] { appearance:none; -webkit-appearance: none; height:8px; background:linear-gradient(90deg,var(--accent), #9ad0ff); border-radius:999px }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(44,123,229,0.28); border:4px solid rgba(255,255,255,0.9) }
+input[type=range]::-moz-range-thumb { width:22px; height:22px; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(44,123,229,0.28); border:4px solid rgba(255,255,255,0.9) }
+
+/* Categories: nicer checkbox with icon area */
+.categories .item { display:flex; align-items:center; gap:12px; padding:8px 6px }
+.categories .item .label { font-size:14px; color:#0f1724 }
+.categories .item .icon { width:28px; height:28px; border-radius:6px; background:linear-gradient(180deg,#eef7ff,#ffffff); display:flex; align-items:center; justify-content:center; border:1px solid rgba(16,24,40,0.03) }
+
+/* Whitelist textarea with prominent outline like the design */
+.whitelist { margin-top:8px }
+.whitelist textarea { min-height:56px; font-family:monospace; padding:12px; border-radius:12px; box-shadow: inset 0 0 0 2px rgba(44,123,229,0.06); border:1px solid rgba(44,123,229,0.12); outline:none }
+.whitelist .hint { display:flex; align-items:center; gap:8px; margin-top:6px; color:var(--muted); font-size:12px }
+.whitelist .legend { height:14px; width:28px; border-radius:4px; background:rgba(236,72,153,0.12); border:2px solid rgba(236,72,153,0.5); display:inline-block }
+
+/* Activity / chart area: subtle card and axes labels similar to attachment */
+.activity-card { margin-top:12px; padding:10px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid rgba(16,24,40,0.03) }
+.activity-card .title { font-weight:700; color:#0f1724 }
+.activity-chart { margin-top:8px; height:80px }
+.activity-footer { display:flex; justify-content:space-between; align-items:center; margin-top:8px }
+
+/* More settings CTA styled as pill button */
+.more-settings { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#1967d2; color:white; padding:10px 16px; border-radius:999px; box-shadow:0 8px 18px rgba(25,103,210,0.18); border:none; cursor:pointer; font-weight:700 }
+
+/* Small responsive tweak to better match the mockup width */
+@media (max-width:360px) { .popup-box { width:320px } .popup-card-hero { padding:14px } }
+
+/* end of additional styles */
+  border:1px solid rgba(0,0,0,0.06);
+    background: linear-gradient(180deg,var(--card), #fbfdff);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:var(--shadow);
+.header{display:flex;align-items:center;gap:8px}
+  body{font-family:Inter,Segoe UI,Arial,sans-serif;margin:14px;width:340px;background:transparent}
+  .header{display:flex;align-items:center;gap:12px}
+  .header img{width:44px;height:44px;border-radius:8px;border:1px solid rgba(0,0,0,0.04);background:var(--glass)}
+  .header h1{font-size:18px;margin:0}
+  .header p{margin:0;color:var(--muted);font-size:12px}
+  .section{margin-top:12px;padding-top:8px}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccc;border-radius:24px;transition:.2s}
+.slider:before{content:"";position:absolute;height:18px;width:18px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}
+.switch input:checked + .slider{background:var(--accent)}
+.switch input:checked + .slider:before{transform:translateX(18px)}
+.switch-label{margin-left:8px;vertical-align:middle}
+input[type=range]{width:100%}
+
+  .switch-label{margin-left:12px;vertical-align:middle;font-weight:600}
+  input[type=range]{width:100%}
+  .categories div{display:flex;gap:10px;align-items:center;margin-top:8px}
+  .categories input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:4px;border:1px solid #e6eef8;background:white;display:inline-block;position:relative}
+  .categories input[type="checkbox"]:checked{background:var(--accent);border-color:var(--accent)}
+  .categories input[type="checkbox"]:checked::after{content:"";position:absolute;left:5px;top:2px;width:6px;height:10px;border:2px solid white;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+  .categories label{color:var(--muted);font-size:13px}
+  textarea{width:100%;box-sizing:border-box;padding:8px;border-radius:8px;border:1px solid #e7eef9;background:#fbfeff}
+
+  .footer{margin-top:12px;text-align:right}
+  button{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+  .activity{font-size:13px;color:#333}
+
+  /* Ensure popup content sits inside the popup box */
+  body > .popup-box { display:block }
+  .card{background:linear-gradient(180deg,#ffffff,#fcfeff);border-radius:8px;padding:8px;border:1px solid #f1f7fb}
+  canvas { background: transparent; display:block; width:100%; height:80px; border-radius:6px; }
+
+  /* small helpers */
+  .row{display:flex;align-items:center;justify-content:space-between}
+  .muted{color:var(--muted);font-size:12px }}

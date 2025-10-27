@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SafeWeb</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <div class="popup-box popup-card-hero">
+      <div class="header">
+        <img id="logo" alt="SafeWeb logo" src="icons/icon128.png">
+        <div class="title-meta">
+          <h1>SafeWeb</h1>
+          <p class="muted">Protection for web content</p>
+        </div>
+      </div>
+
+    <div class="section protection-row">
+      <div class="label">Protection</div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <label class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider"></span>
+        </label>
+        <div class="switch-on-badge">On</div>
+      </div>
+    </div>
+
+    <div class="section blur-row">
+      <div class="meta">
+        <label for="intensity">Blur intensity</label>
+        <div class="blur-value"><span id="intensityValue">5</span></div>
+      </div>
+      <div class="range-wrap">
+        <input id="intensity" type="range" min="0" max="20" step="1">
+      </div>
+    </div>
+
+    <div class="section categories">
+      <div><input type="checkbox" id="catProfanity"> <label for="catProfanity">Profanity</label></div>
+      <div><input type="checkbox" id="catHate"> <label for="catHate">Hate speech</label></div>
+      <div><input type="checkbox" id="catAdult"> <label for="catAdult">Adult content</label></div>
+    </div>
+
+    <div class="section whitelist">
+      <label for="whitelist">Whitelist sites (one per line)</label>
+      <textarea id="whitelist" rows="3" placeholder="example.com"></textarea>
+      <div class="hint"><span class="legend"></span> <span class="muted">Toxic items/day</span></div>
+    </div>
+
+    <div class="section activity-card">
+      <div class="title">Page activity</div>
+      <div class="muted">Blurred items on this page: <span id="activityCount">0</span></div>
+      <div class="activity-chart">
+        <canvas id="trendChart" width="280" height="80"></canvas>
+      </div>
+    </div>
+
+    <!-- AI rephrasing suggestions -->
+    <div class="section">
+      <h3 style="margin:0 0 8px 0; font-size:15px">AI-Powered Rephrasing</h3>
+      <label for="rephraseInput">Enter text to rephrase</label>
+      <textarea id="rephraseInput" rows="3" placeholder="Type or paste text to get polite alternatives..."></textarea>
+      <div class="row" style="margin-top:8px;gap:12px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <label for="suggestionsCount" style="font-size:13px">Suggestions</label>
+          <input id="suggestionsCount" type="range" min="1" max="5" step="1" value="3">
+          <span id="suggestionsCountVal">3</span>
+        </div>
+        <div>
+          <button id="rephraseBtn" class="more-settings">Kindify My Text</button>
+        </div>
+      </div>
+      <div class="muted" style="margin-top:6px">Optional: store an API key in <a id="openOptionsLink" href="#">Options</a> to use OpenAI for higher quality suggestions.</div>
+      <ul id="rephraseResults" style="margin-top:8px;padding-left:18px"></ul>
+    </div>
+
+      <div class="footer">
+        <button id="openOptions" class="more-settings">More settings</button>
+      </div>
+    </div>
+    <script src="chart.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
